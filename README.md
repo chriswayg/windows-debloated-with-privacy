@@ -1,5 +1,14 @@
 # Windows 10 Enterprise 21H2
 - On Gigabyte EP45-UD3L, Core 2 Quad Q9400, 8GB DDR2 PC2-8500, Asus GTX 660Ti
+
+## Features
+- Using Windows 10 Enterprise as its the most configurable edition
+- Debloat Windows using two utilities greatly reducing Windows Store apps and minimizing services
+- Maximize privacy by using local accounts, tweaks, restrictive privacy settings and disabled Telemetry
+- Delay security updates for a week and feature upgrades for 3 months for increased stability
+- Install essential open source apps & system tools
+- Activate using Windows 10 Digital License (HWID)
+
 ## Download from MS
 ### MyDigitalLife ESD Repository - Get latest version
 
@@ -41,6 +50,9 @@ Client Business Volume ISO Edition List:
 	- Select the Windows 10 ISO
 	- Partition scheme: MBR install
 	- Target System: BIOS (or UEFI-CSM)
+- Download Windows10Debloater.zip from [GitHub - Sycnex/Windows10Debloater: Script to remove Windows 10 bloatware.](https://github.com/Sycnex/Windows10Debloater)
+	- and copy Windows10Debloater.zip to the USB Installer
+- Download and copy the Graphics driver as well.
 
 ## BIOS settings
 - Based on “Optimized Defaults”
@@ -95,9 +107,8 @@ Client Business Volume ISO Edition List:
 
 ### Windows10Debloater
 - Do this first before installing anything else
-- Download Zip from [GitHub - Sycnex/Windows10Debloater: Script to remove Windows 10 bloatware.](https://github.com/Sycnex/Windows10Debloater)
 - Windows10DebloaterGUI
-	1. Download the .zip file on the main page of the GitHub and extract the .zip file to your desired location
+	1. Copy the .zip file from the USB installer stick and extract it to your desired location
 	2. Once extracted, open PowerShell as an Administrator
 	3. Enable PowerShell execution `Set-ExecutionPolicy Unrestricted -Force`
 	4. On the prompt, change to the directory where you extracted the files:   e.g. - `cd c:\Users\Public\Scripts\Windows10Debloater`
