@@ -137,23 +137,42 @@ Client Business Volume ISO Edition List:
 * Disable Cortana (optional, as already done in Debloater)
 	* Go to: Computer Configuration > Administrative Templates > Windows Components > Search 
 	* Allow Cortana - disable Cortana 
-
-### Reconnect internet  & Install Windows 10 Updates
-- Reconnect internet 
-- Windows Update -> Check for Updates
-- Wait for Updates to finish and Restart when finished (configure System and Edge while waiting)
-
+	
 ### System
 * Settings > System > About
   - Advanced System Settings > Advanced > Performance > Advanced > Virtual Memory - Change...
 	- Custom Size: Initial/Maximum both fixed at 2024 MB (depending on memory needs, minimizes fragmentation)
   - Rename this PC > enter a new name, for example *OfficePC*
 
+### Reconnect internet  & Install Windows 10 Updates
+- Reconnect internet 
+- Windows Update -> Check for Updates
+- Wait for Updates to finish and Restart when finished (possibly configure Browsers while waiting)
+
+### Install Windows 10 Digital License (HWID)
+* Microsoft Activation Scripts - OpenSource
+	*  A collection of scripts for activating Microsoft products using HWID / KMS38 / Online KMS activation methods with a focus on open-source 
+- **Method 1 - PowerShell**
+	- [Microsoft Activation Scripts](https://massgrave.dev)
+	* On Windows 10/11, right click on windows start menu, select PowerShell or Terminal.
+	* Copy-paste the below code and press enter
+	`iwr -useb https://massgrave.dev/get | iex`
+- **Method 2 - Traditional**
+	* [GitHub - massgravel/Microsoft-Activation-Scripts](https://github.com/massgravel/Microsoft-Activation-Scripts)
+	* 	Download the file named 'MAS_1.5_Password_1234.7z' from  [here](https://github.com/massgravel/Microsoft-Activation-Scripts/releases) 
+	* Extract this file with 7zip (Password is 1234)
+	* Go to the folder named 'All-In-One-Version'
+	* Run the file named 'MAS_1.5_AIO_CRC32_21D20776.cmd'
+- **Options**
+	* You will see the activation options, follow onscreen instructions.
+	* Use HWID (1)
+	* Check activation using the script (4) and (5)
+
 ### Chris Titus Windows Tool: Install Apps & Tweak System
 [The Ultimate Windows Utility](https://christitus.com/windows-tool/)
 - Reinstall "App Installler" from Microsoft Store, in case it was uninstalled by the Debloater
 - From an elevated PowerShell prompt (Run as Administrator) run:
-`iwr -useb https://christitus.com/win | iex`
+	`iwr -useb https://christitus.com/win | iex`
 - Install (your preferred Open Source apps)
 	- Firefox
 	- Signal, Skype, Zoom
@@ -195,7 +214,7 @@ Client Business Volume ISO Edition List:
 		- Unckeck: Show the number of blocked requests
 		- Filter Lists -> add German
 
-### Configure Firefox  Browser
+### Configure Firefox Browser
 * Firefox Home
 	* Shortcuts: 1 row
 	* Recent Activity: On
@@ -209,39 +228,30 @@ Client Business Volume ISO Edition List:
 	- uBlock Origin
 		- Unckeck: Show the number of blocked requests
 		- Filter Lists -> add German
-
-### Install Windows 10 Digital License (HWID)
-* Microsoft Activation Scripts - OpenSource
-	*  A collection of scripts for activating Microsoft products using HWID / KMS38 / Online KMS activation methods with a focus on open-source 
-- **Method 1 - PowerShell**
-	- [Microsoft Activation Scripts](https://massgrave.dev)
-	* On Windows 10/11, right click on windows start menu, select PowerShell or Terminal.
-	* Copy-paste the below code and press enter
-	`iwr -useb https://massgrave.dev/get | iex`
-- **Method 2 - Traditional**
-	* [GitHub - massgravel/Microsoft-Activation-Scripts](https://github.com/massgravel/Microsoft-Activation-Scripts)
-	* 	Download the file named 'MAS_1.5_Password_1234.7z' from  [here](https://github.com/massgravel/Microsoft-Activation-Scripts/releases) 
-	* Extract this file with 7zip (Password is 1234)
-	* Go to the folder named 'All-In-One-Version'
-	* Run the file named 'MAS_1.5_AIO_CRC32_21D20776.cmd'
-- **Options**
-	* You will see the activation options, follow onscreen instructions.
-	* Use HWID (1)
-	* Check activation using the script (4) and (5)
 	
-### Install 
+### Install Apps
 * LibreOffice: [Download LibreOffice](https://www.libreoffice.org/download/download/)
 	* Custom -> German Dictionary
 	* Open MS Office Documents
-* Autoruns: [Autoruns for Windows - Windows Sysinternals | Microsoft Docs](https://docs.microsoft.com/en-us/sysinternals/downloads/autoruns)
-	* Copy to Program Files & create Start Menu shortcut in Windows System
-	* disable Skype autostart
-	* disable some context menu entries
-* Prime95: [GIMPS - Free Prime95 software downloads - PrimeNet](https://www.mersenne.org/download/)
 * Winaero 
 	* Classic Sticky Notes: [Old Classic Sticky Notes for Windows 10](https://winaero.com/old-classic-sticky-notes-for-windows-10-version-1809/)
 	* Winaero Tweaker: [Download Winaero Tweaker](https://winaero.com/download-winaero-tweaker/)
 * Windows Firewall Control (free): [Windows Firewall Control - Binisoft - Malwarebytes](https://www.binisoft.org/wfc)
+
+### Install Tools & Utilities
+- Copy apps or app folders to C:\Users\Public\Apps
+	- Pin each App to Start Menu (right click app or shortcut)
+	- Create a Start Menu folder such as *Tools*
+- Prime95: [GIMPS - Free Prime95 software downloads - PrimeNet](https://www.mersenne.org/download/)
+	- run a torture test
+	- monitor with *HWiNFO64* Sensors
+- Autoruns: [Autoruns for Windows - Windows Sysinternals | Microsoft Docs](https://docs.microsoft.com/en-us/sysinternals/downloads/autoruns)
+	* disable Skype autostart
+	* disable some context menu entries (or use ShellMenuView)
+- [ShellMenuView: Disable / enable context menu items of Explorer](https://www.nirsoft.net/utils/shell_menu_view.html)
+	- for example "Edit with Paint 3D" 
+	- right click "Disable"
+- (optional) [ShellExView - Shell Extension Manager For Windows](https://www.nirsoft.net/utils/shexview.html)
 
 ### Optional Configuration
 * Personalize Windows: Themes, Colors
@@ -277,4 +287,3 @@ Client Business Volume ISO Edition List:
 
 ### Testing
 * Admin PowerShell:  `sfc /scannow`
-* Run Prime95 
