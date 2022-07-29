@@ -2,9 +2,9 @@
 - On Gigabyte EP45-UD3L, Core 2 Quad Q9400, 8GB DDR2 PC2-8500, Asus GTX 660Ti
 
 ## Features
-- Using Windows 10 Enterprise as its the most configurable edition
+- Using Windows 10 Enterprise as it is the most configurable edition
 - Debloat Windows using two utilities greatly reducing Windows Store apps and minimizing services
-- Maximize privacy by using local accounts, tweaks, restrictive privacy settings and disabled Telemetry
+- Maximize privacy by using local accounts, tweaks, restrictive privacy settings and disabling Telemetry
 - Delay security updates for a week and feature upgrades for 3 months for increased stability
 - Install essential open source apps & system tools
 - Activate using Windows 10 Digital License (HWID)
@@ -14,14 +14,10 @@
 
 * [https://forums.mydigitallife.net/threads/windows-10-esd-repository.59082/](https://forums.mydigitallife.net/threads/windows-10-esd-repository.59082/) 
 
----
-
 **Download Version 21H2**
 
 Client Business Volume ISO Edition List:
-- Windows 10 Education
-- Windows 10 Enterprise
-- Windows 10 Pro
+- Windows 10 Education, Windows 10 Enterprise, Windows 10 Pro (including additional N editions)
 
 - http://b1.download.windowsupdate.com/d/upgr/2022/05/19044.1706.220505-0136.21h2_release_svc_refresh_clientbusiness_vol_x64fre_en-us_03d0a0dfebf88acfce0e6f870cba95ad3b3221c9.esd
 
@@ -30,12 +26,12 @@ Client Business Volume ISO Edition List:
 ## Convert to ISO
 1. Download the latest decryption package `esd-decrypter-wimlib` from [WHD/scripts · abbodi1406 · GitHub](https://github.com/abbodi1406/WHD/tree/master/scripts), and extract its contents to a folder with a simple path.
 	- [Download esd-decrypter-wimlib-63.7z · GitHub](https://github.com/abbodi1406/WHD/blob/master/scripts/esd-decrypter-wimlib-63.7z)
-2. Move the ESD file to the same folder. Make sure that the ESD file is not read-only or blocked.
+2. Move the ESD file to the same folder.
 3. Right click on `decrypt.cmd` and 'Run as administrator' (this requires that only 1 ESD file is present in the current directory).
 4. ESD file contains 6 editions
 	- Select Option 2 - Include one edition
 5. When the list of editions is shown
-	- Enter edition number 3 for Enterprise
+	- Enter edition number 3 for *Enterprise*
 	- This will create an ISO with Enterprise edition only
 6. On the next screen select option 1:
 	- 1 Create ISO with install.wim (this is the most preferable option, which will convert ESD file to a regular ISO distribution that contains standard install.wim file)
@@ -44,9 +40,9 @@ Client Business Volume ISO Edition List:
 
 - More details in the ReadMe.txt
 
-## Create USB Installer
-- Plug in a 8GB or more USB flash drive
-- in [Rufus](https://rufus.ie/en/#) choose 
+## Create Offline USB Installer
+- Plug in a 8+GB USB flash drive
+- in [Rufus](https://rufus.ie/) choose 
 	- Select the Windows 10 ISO
 	- Partition scheme: MBR install
 	- Target System: BIOS (or UEFI-CSM)
@@ -54,49 +50,49 @@ Client Business Volume ISO Edition List:
 	- and copy Windows10Debloater.zip to the USB Installer
 - Download and copy the Graphics driver as well.
 
-## BIOS settings
+## BIOS settings 
+- Specific to the above mother board
 - Based on “Optimized Defaults”
 - Keep “Full Screen Logo Show” due to buggy monitor not switching on without it 
-- PEG: use GPU on PCIe
+- PEG: use GPU on PCIe (as this is an old MB that still has PCI slots as well)
 - Refrained from overclocking due to very old hardware resulting in lack of stability 
 
 ## Install Windows 10 
-- **Do not use Internet**, unplug Ethernet, do not log into Wifi
+- **Do not enable Internet**, unplug Ethernet, do not log into Wifi
 - Only USB2 ports are available on this board, making this a slow install 
 - Use a port on the back
 - F12 for Boot Menu, select Harddisk+ and select USB to boot
 - press any key to boot from USB
-- when cursor blinking, wait for 5 to 10 minutes to boot
+- when cursor blinkingon black screen, wait for 5 to 10 minutes to boot (seems to be MBR related)
 
 ### First boot
-- English Philippines 
+- Select: English Philippines 
 
 ### Second boot
 - Basics
 	- Region: Philippines
 	- Keyboard: US
-	- Add layout: Germany 
-	- Skip second keyboard layout 
+	- Skip second keyboard layout (or Add layout: Germany)
 - Network 
-	- click: I don’t have Internet 
+	- Click: I don’t have Internet 
 	- Click: continue with limited setup
 
 ### Third boot
 - Network 
-	- click: I don’t have Internet 
+	- Click: I don’t have Internet 
 	- Click: continue with limited setup
 - Account (local account)
 	- Name
 	- Password
-	- Security Questions 1-3
+	- Security Questions 1-3 (do not use real info)
 - Services - Choose privacy settings 
-	- All 6: No
+	- All 6 settings: No
 * Wait for automatic login to the initial local user account 
 
 ## Configure Windows 10
 ### Taskbar
 - Arrange shortcuts on Taskbar
-	- Show Tasks, Snip, Explorer, Edge
+	- Show Task Manager, Snip, Explorer, Edge
 	- News and Interests -> Turn Off
 
 ### Privacy
@@ -108,13 +104,13 @@ Client Business Volume ISO Edition List:
 ### Windows10Debloater
 - Do this first before installing anything else
 - Windows10DebloaterGUI
-	1. Copy the .zip file from the USB installer stick and extract it to your desired location
+	1. Copy the Windows10Debloater.zip file from the USB installer and extract it to your desired location
 	2. Once extracted, open PowerShell as an Administrator
 	3. Enable PowerShell execution `Set-ExecutionPolicy Unrestricted -Force`
-	4. On the prompt, change to the directory where you extracted the files:   e.g. - `cd c:\Users\Public\Scripts\Windows10Debloater`
-	5. Next, to run the script, enter in the following: `.\Windows10SysPrepDebloater.ps1 -Debloat -Privacy`
-	6.  Then run: `.\Windows10DebloaterGUI.ps1` to *Uninstall OneDrive*
-	7. In additional user accounts just run: `.\Windows10DebloaterGUI.ps1` if some apps have reappeared
+	4. Change to the directory where you extracted the files:   e.g. - `cd c:\Users\Public\Scripts\Windows10Debloater`
+	5. Run the script: `.\Windows10SysPrepDebloater.ps1 -Debloat -Privacy`
+	6. Then run: `.\Windows10DebloaterGUI.ps1` to *Uninstall OneDrive*
+	7. In additional user accounts just run: `.\Windows10DebloaterGUI.ps1` if some apps have reappeared (possibly OneDrive)
 
 ### Install Graphics Driver
 * Driver file should be on the USB installer
@@ -124,21 +120,21 @@ Client Business Volume ISO Edition List:
 
 ### Telemetry, Updates & Lock Screen
 * Start the Local Group Policy Editor
-	* create a shortcut for Local Group Policy Editor  `gpedit.msc` on the start menu and add it to *Windows Administrative Tools*
+	* create a shortcut for *Local Group Policy Editor*  `gpedit.msc` on the Desktop and move it to *Windows Administrative Tools*
 * Use Group Policy Editor to set your organization’s telemetry level: 
 	* From Local Group Policy Editor, go to 
 		* Computer Configuration > Administrative Templates > Windows Components > Data Collection and Preview Builds. 
 	* Double-click 'Allow Telemetry'
 	* Select Enable
-	* In the Options box, select Level 0, and then click OK 
+	* In the Options box, select Level 0, and then click OK (Level 0 is only available on the Entrerprise edition)
 * Delay Updates
 	* Go to: Computer Configuration > Administrative Templates > Windows Components > Windows Update > Windows Update for Business
 	* Quality Updates: defer 7 days
 	* Feature Updates - Semi Annual Channel: defer 90 days
 * Disable Lock Screen
-	* Go to: Computer Configuration > Policies > Administrative Templates > Control Panel> Personalization
+	* Go to: Computer Configuration > Policies > Administrative Templates > Control Panel > Personalization
 	* Enable: "Do not display the lock screen"
-* Disable Cortana (optional, as already done in debloater)
+* Disable Cortana (optional, as already done in Debloater)
 	* Go to: Computer Configuration > Administrative Templates > Windows Components > Search 
 	* Allow Cortana - disable Cortana 
 
@@ -148,24 +144,25 @@ Client Business Volume ISO Edition List:
 - Wait for Updates to finish and Restart when finished (configure System and Edge while waiting)
 
 ### System
-* System - About - Advanced System Settings - Advanced
-	* Static Swapfile at 2024 MB
-* also change Computer Name
+* Settings > System > About
+  - Advanced System Settings > Advanced > Performance > Advanced > Virtual Memory - Change...
+	- Custom Size: Initial/Maximum both fixed at 2024 MB (depending on memory needs, minimizes fragmentation)
+  - Rename this PC > enter a new name, for example *OfficePC*
 
-### Chris Titus Windows Tool
+### Chris Titus Windows Tool: Install Apps & Tweak System
 [The Ultimate Windows Utility](https://christitus.com/windows-tool/)
-- Reinstall "App Installler" from MS Store, in case it was uninstalled by the Debloater
-- From an Elevated (Run as Administrator) PowerShell prompt run:
+- Reinstall "App Installler" from Microsoft Store, in case it was uninstalled by the Debloater
+- From an elevated PowerShell prompt (Run as Administrator) run:
 `iwr -useb https://christitus.com/win | iex`
-- Install
+- Install (your preferred Open Source apps)
 	- Firefox
 	- Signal, Skype, Zoom
 	- Adobe Reader DC, Notepad++
 	- VLC
 	- 7-Zip, Bitwarden, Everything Search, HWinfo, TreeSize, Windows Terminal
-- then remove Icons from Desktop
+- then remove app icons from Desktop
 - Tweaks
-	- Desktop
+	- Select: Desktop 
 	- Check also: Show File Extensions
 
 ### Privacy
@@ -183,12 +180,12 @@ Client Business Volume ISO Edition List:
 	* File System: On
 
 ### Configure Edge Browser
-- Upon first launch
+- Upon first launch (do not use a MS account for synching)
 	- Sync -> Start without your data
 	- Google -> Continue without this data
-	- Uncheck; "Make MS experience more useful"
+	- Uncheck: "Make MS experience more useful"
 * Start Screen
-	* Custom: all Off except for "Show Quick Links"
+	* Custom: all *Off* except for "Show Quick Links"
 - Settings
 	- Privacy -> Strict
 	- (scroll down) Address bar and search -> Search Engine -> DuckDuckGo
@@ -200,7 +197,7 @@ Client Business Volume ISO Edition List:
 
 ### Configure Firefox  Browser
 * Firefox Home
-	* Shortcuts: 1 or 2 rows
+	* Shortcuts: 1 row
 	* Recent Activity: On
 * General -> Startup -> Open previous windows and tabs
 - Search
@@ -212,19 +209,6 @@ Client Business Volume ISO Edition List:
 	- uBlock Origin
 		- Unckeck: Show the number of blocked requests
 		- Filter Lists -> add German
-
-### Install 
-* LibreOffice (stable)
-	* Custom -> German Dictionary
-	* Open MS Office Documents
-* Autoruns
-	* [Autoruns for Windows - Windows Sysinternals | Microsoft Docs](https://docs.microsoft.com/en-us/sysinternals/downloads/autoruns)
-	* Copy to Program Files & create Start Menu shortcut in Windows System
-	* disable Skype autostart
-* Prime95 
-* Winaero 
-	* Classic Sticky Notes
-	* (optional) Winaero Tweaker
 
 ### Install Windows 10 Digital License (HWID)
 * Microsoft Activation Scripts - OpenSource
@@ -244,20 +228,34 @@ Client Business Volume ISO Edition List:
 	* You will see the activation options, follow onscreen instructions.
 	* Use HWID (1)
 	* Check activation using the script (4) and (5)
+	
+### Install 
+* LibreOffice: [Download LibreOffice](https://www.libreoffice.org/download/download/)
+	* Custom -> German Dictionary
+	* Open MS Office Documents
+* Autoruns: [Autoruns for Windows - Windows Sysinternals | Microsoft Docs](https://docs.microsoft.com/en-us/sysinternals/downloads/autoruns)
+	* Copy to Program Files & create Start Menu shortcut in Windows System
+	* disable Skype autostart
+	* disable some context menu entries
+* Prime95: [GIMPS - Free Prime95 software downloads - PrimeNet](https://www.mersenne.org/download/)
+* Winaero 
+	* Classic Sticky Notes: [Old Classic Sticky Notes for Windows 10](https://winaero.com/old-classic-sticky-notes-for-windows-10-version-1809/)
+	* Winaero Tweaker: [Download Winaero Tweaker](https://winaero.com/download-winaero-tweaker/)
+* Windows Firewall Control (free): [Windows Firewall Control - Binisoft - Malwarebytes](https://www.binisoft.org/wfc)
 
 ### Optional Configuration
 * Personalize Windows: Themes, Colors
-	* Download Themes without MS Account: [Desktop Themes](https://support.microsoft.com/en-us/windows/desktop-themes-94880287-6046-1d35-6d2f-35dee759701e) (double-click to store)
+  * Download Themes without MS Account: [Desktop Themes](https://support.microsoft.com/en-us/windows/desktop-themes-94880287-6046-1d35-6d2f-35dee759701e) (double-click to store)
 * Automatic login
   * Use the Windows key + R keyboard shortcut to open the Run window. 
   * Run `regedit` and navigate to
-  * `\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\PasswordLess\Device\`
-    * right-click [DevicePasswordLessBuildVersion]
-    * and select [Modify..] then change [Value Data] to 0 {zero!}
-	* Run `netplwiz` 
-	  * Click your account within the Users for this computer field. 
-	  * Click the checkbox beside Users must enter a user name and password to use this computer. ... 
-	  * Click Apply and enter the password twice. Click OK!
+	    * `\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\PasswordLess\Device\`
+	      * right-click [DevicePasswordLessBuildVersion]
+	      * and select [Modify..] then change [Value Data] to 0 {zero!}
+  * Run `netplwiz` 
+	    * Click your account within the Users for this computer field. 
+	    * Click the checkbox beside Users must enter a user name and password to use this computer. ... 
+	    * Click Apply and enter the password twice. Click OK!
 * Reverse Mouse Scroll Direction (like in macOS)
   - [How to reverse mouse and touchpad scrolling direction on Windows 10 | Windows Central](https://www.windowscentral.com/how-reverse-scrolling-direction-windows-10)
 
@@ -266,9 +264,9 @@ Client Business Volume ISO Edition List:
 	- Name, Password
 	- Check: Password never expires
 	- Create
-- Upon first login: Services -> Privacy -> No (to all 4)
+- Upon first login: Services -> Privacy -> *No* (to all 4)
 - If OneDrive still shows up run: `.\Windows10DebloaterGUI.ps1` to *Uninstall OneDrive* for this account as well. 
-	- Explorer shell might disappear, in this case run `shutdown /r`
+	- Explorer shell might disappear; in this case run `shutdown /r`
 - Configure Taskbar
 	- Search (show)
 	- News and Interests (hide)
