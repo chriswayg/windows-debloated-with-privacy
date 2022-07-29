@@ -17,6 +17,9 @@
   - Run the configuration from a Gist: https://boxstarter.org/learn/weblauncher
   - Probably useful for integrating various debloat scripts
   - Individual account pre-configuration?
+  - Example scripts
+    - [Boxstarter Commands for a new Windows box. · GitHub](https://gist.github.com/jessfraz/7c319b046daa101a4aaef937a20ff41f)
+    - Lots of Tweaks: [Boxstarter Windows 10 Configuration · GitHub](https://gist.github.com/zloeber/9c2d659a2a8f063af26c9ba0285c7e78)
 
 ## Check other debloat scripts
 - [Search · debloat windows · GitHub](https://github.com/search?q=debloat+windows)
@@ -27,6 +30,7 @@
 - Very Comprehensive Project: [GitHub - farag2/Sophia-Script-for-Windows: The most powerful PowerShell module on GitHub for Windows 10 & Windows 11 fine-tuning and tweaking](https://github.com/farag2/Sophia-Script-for-Windows)
   - [GitHub - Sophia-Community/SophiApp: The most powerful open source tweaker for fine-tuning Windows 10 & Windows 11. The next chapter of the Sophia Script project.](https://github.com/Sophia-Community/SophiApp)
 - Combines various scripts and does an Analysis (see also Packages.zip): [GitHub - builtbybel/privatezilla: 👀👮🐢🔥Performs a privacy & security check of Windows 10](https://github.com/builtbybel/privatezilla)
+- Used by Christ Titus' script: [O&O ShutUp10++ – Free antispy tool for Windows 10 and 11](https://www.oo-software.com/en/shutup10)
 
 
 ## Modularize
