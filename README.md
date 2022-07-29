@@ -3,7 +3,7 @@
 
 ## Features
 - Using Windows 10 Enterprise as it is the most configurable edition
-- Debloat Windows using two utilities greatly reducing Windows Store apps and minimizing services
+- Debloat Windows using various utilities greatly reducing Windows Store apps and minimizing services
 - Maximize privacy by using local accounts, tweaks, restrictive privacy settings and disabling Telemetry
 - Delay security updates for a week and feature upgrades for 3 months for increased stability
 - Install essential open source apps & system tools
@@ -51,7 +51,7 @@ Client Business Volume ISO Edition List:
 - Download and copy the Graphics driver as well.
 
 ## BIOS settings 
-- Specific to the above mother board
+- Specific to the above motherboard
 - Based on “Optimized Defaults”
 - Keep “Full Screen Logo Show” due to buggy monitor not switching on without it 
 - PEG: use GPU on PCIe (as this is an old MB that still has PCI slots as well)
@@ -246,27 +246,27 @@ Client Business Volume ISO Edition List:
 	- run a torture test
 	- monitor with *HWiNFO64* Sensors
 - Autoruns: [Autoruns for Windows - Windows Sysinternals | Microsoft Docs](https://docs.microsoft.com/en-us/sysinternals/downloads/autoruns)
-	* disable Skype autostart
-	* disable some context menu entries (or use ShellMenuView)
+	- disable Skype autostart
+	- disable some context menu entries (or use ShellMenuView)
 - [ShellMenuView: Disable / enable context menu items of Explorer](https://www.nirsoft.net/utils/shell_menu_view.html)
 	- for example "Edit with Paint 3D" 
 	- right click "Disable"
 - (optional) [ShellExView - Shell Extension Manager For Windows](https://www.nirsoft.net/utils/shexview.html)
 
 ### Optional Configuration
-* Personalize Windows: Themes, Colors
-  * Download Themes without MS Account: [Desktop Themes](https://support.microsoft.com/en-us/windows/desktop-themes-94880287-6046-1d35-6d2f-35dee759701e) (double-click to store)
-* Automatic login
-  * Use the Windows key + R keyboard shortcut to open the Run window. 
-  * Run `regedit` and navigate to
-	    * `\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\PasswordLess\Device\`
-	      * right-click [DevicePasswordLessBuildVersion]
-	      * and select [Modify..] then change [Value Data] to 0 {zero!}
-  * Run `netplwiz` 
-	    * Click your account within the Users for this computer field. 
-	    * Click the checkbox beside Users must enter a user name and password to use this computer. ... 
-	    * Click Apply and enter the password twice. Click OK!
-* Reverse Mouse Scroll Direction (like in macOS)
+- Personalize Windows: Themes, Colors
+  - Download Themes without MS Account: [Desktop Themes](https://support.microsoft.com/en-us/windows/desktop-themes-94880287-6046-1d35-6d2f-35dee759701e) (double-click to store)
+- Automatic login
+  - Use the Windows key + R keyboard shortcut to open the Run window. 
+  - Run `regedit` and navigate to
+	    - `\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\PasswordLess\Device\`
+	    - right-click [DevicePasswordLessBuildVersion]
+	    - and select [Modify..] then change [Value Data] to 0 {zero!}
+  - Run `netplwiz` 
+	    - Click your account within the Users for this computer field. 
+	    - Click the checkbox beside Users must enter a user name and password to use this computer. ... 
+	    - Click Apply and enter the password twice. Click OK!
+- Reverse Mouse Scroll Direction (like in macOS)
   - [How to reverse mouse and touchpad scrolling direction on Windows 10 | Windows Central](https://www.windowscentral.com/how-reverse-scrolling-direction-windows-10)
 
 ## User Accounts
@@ -286,4 +286,4 @@ Client Business Volume ISO Edition List:
 - Configure LibreOffice
 
 ### Testing
-* Admin PowerShell:  `sfc /scannow`
+- Admin PowerShell:  `sfc /scannow`
