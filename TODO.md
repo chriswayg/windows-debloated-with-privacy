@@ -33,15 +33,26 @@
 - Used by Christ Titus' script: [O&O ShutUp10++ – Free antispy tool for Windows 10 and 11](https://www.oo-software.com/en/shutup10)
 
 
+## Remove duplication
+- some settings are changed by multiple scripts
+- some settings are changed in Group Policy as well as in a script
+- some settings are changed in the UI
+- almost all configuartion should be done in one script only once
+
+## Telemetry
+- [Manage Telemetry and Data Collection settings in Windows 11/10](https://www.thewindowsclub.com/windows-10-telemetry)
+  - see table with various Telemetry related settings
+
 ## Modularize
 
 - separate out the hardware specific sections for a more generalized outline and script
 
 ## Test in a VM
-- using various debloater scripts
+- using various scripts
 
 ## How to validate?
 - privacy
 - security
 - functionality
+- idempotency
 - is there a test script?
